@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class SumDigitsZA {
+    public static void main(String[]Args) {
+        Scanner input = new Scanner(System.in);
+        int num = 0;
+        int total = 0;
+        System.out.println("Please enter an integer:");
+        if (input.hasNextInt()) {
+            num = input.nextInt();
+             total = SumDigits(num);
+        } else {
+            System.out.println("That is not an integer!");
+            System.exit(1);
+        }
+
+        System.out.println("The sum of all digits in " + num + " is " + total);
+    }
+
+    public static int SumDigits(long n) {
+
+        int numConverted = (int) (n);
+        int sum = 0;
+
+        while (numConverted > 0) {
+            sum += numConverted % 10;
+            numConverted = numConverted / 10;
+
+        }
+
+        return sum;
+    }
+
+    }
